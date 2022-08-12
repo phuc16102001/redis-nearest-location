@@ -1,4 +1,5 @@
 # Redis cache - Geospatial query
+
 [![stars](https://custom-icon-badges.herokuapp.com/github/stars/phuc16102001/redis-demo?logo=star)](https://github.com/phuc16102001/redis-demo/stargazers "stars")
 
 ## Introduction
@@ -32,10 +33,18 @@ $ cd backend
 $ npm start
 ```
 
+Then you can start the frontend - web application:
+
 ```bash
 $ cd frontend
 $ npm start
 ```
+
+## Technologies
+
+<div style="display: flex; justify-content: center" >
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+</div>
 
 ## Gallery
 
