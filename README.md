@@ -52,7 +52,7 @@ $ npm start
 ## Gallery
 
 <p align="center">
-  <img src="./res/gallery.png" height="400" width="900" />
+  <img src="./res/gallery.png" height="350" width="850" />
 </p>
 
 ## Contribution
