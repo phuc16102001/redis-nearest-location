@@ -66,61 +66,66 @@ function App() {
     <Row style={{
       padding: "32px"
     }}>
-      <Col span={12} style={{ padding: "16px" }}>
-        <h1>Add cache data</h1>
-        <Form onFinish={handleAdd} wrapperCol={{ span: 10 }} labelCol={{ span: 6 }}>
-          <Form.Item name='lat' label="Latitude">
-            <InputNumber style={{ width: '100%' }} />
-          </Form.Item>
-          <Form.Item name="long" label="Longitude">
-            <InputNumber style={{ width: '100%' }} />
-          </Form.Item>
-          <Form.Item name="label" label="Label">
-            <Input style={{ width: '100%' }} />
-          </Form.Item>
-          <Row justify='space-evenly'>
-            <Form.Item>
-              <Button style={{ width: '128px' }} shape='round' type='primary' htmlType='submit'>Add</Button>
+      <Row style={{ width: "100%" }} justify='space-evenly'>
+        <h1>Redis cache demo</h1>
+      </Row>
+      <Row style={{ width: "100%" }}>
+        <Col span={12} style={{ padding: "16px" }}>
+          <h2>Add cache data</h2>
+          <Form onFinish={handleAdd} wrapperCol={{ span: 10 }} labelCol={{ span: 6 }}>
+            <Form.Item name='lat' label="Latitude">
+              <InputNumber style={{ width: '100%' }} />
             </Form.Item>
-          </Row>
-        </Form>
-      </Col>
-      <Col span={12} style={{ padding: "16px" }}>
-        <h1>Query location</h1>
-        <Form onFinish={handleQuery} wrapperCol={{ span: 10 }} labelCol={{ span: 6 }}>
-          <Form.Item name='lat' label="Latitude">
-            <InputNumber style={{ width: '100%' }} />
-          </Form.Item>
-          <Form.Item name="long" label="Longitude">
-            <InputNumber style={{ width: '100%' }} />
-          </Form.Item>
-          <Form.Item name="distance" label="Distance">
-            <InputNumber addonAfter={<div>m</div>} style={{ width: '100%' }} />
-          </Form.Item>
-          <Row justify='space-evenly'>
-            <Form.Item>
-              <Button style={{ width: '128px' }} shape='round' type='primary' htmlType='submit'>Query</Button>
+            <Form.Item name="long" label="Longitude">
+              <InputNumber style={{ width: '100%' }} />
             </Form.Item>
-          </Row>
-        </Form>
-        <h3>Result:</h3>
-        {result &&
-          <Descriptions bordered column={2}>
-            <Descriptions.Item label="Data" span={2}>
-              {result.member}
-            </Descriptions.Item>
-            <Descriptions.Item label="Longitude">
-              {result.coordinates.longitude}
-            </Descriptions.Item>
-            <Descriptions.Item label="Latitude">
-              {result.coordinates.latitude}
-            </Descriptions.Item>
-            <Descriptions.Item label="Distance">
-              {result.distance} m
-            </Descriptions.Item>
-          </Descriptions>
-        }
-      </Col>
+            <Form.Item name="label" label="Label">
+              <Input style={{ width: '100%' }} />
+            </Form.Item>
+            <Row justify='space-evenly'>
+              <Form.Item>
+                <Button style={{ width: '128px' }} shape='round' type='primary' htmlType='submit'>Add</Button>
+              </Form.Item>
+            </Row>
+          </Form>
+        </Col>
+        <Col span={12} style={{ padding: "16px" }}>
+          <h2>Query location</h2>
+          <Form onFinish={handleQuery} wrapperCol={{ span: 10 }} labelCol={{ span: 6 }}>
+            <Form.Item name='lat' label="Latitude">
+              <InputNumber style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item name="long" label="Longitude">
+              <InputNumber style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item name="distance" label="Distance">
+              <InputNumber addonAfter={<div>m</div>} style={{ width: '100%' }} />
+            </Form.Item>
+            <Row justify='space-evenly'>
+              <Form.Item>
+                <Button style={{ width: '128px' }} shape='round' type='primary' htmlType='submit'>Query</Button>
+              </Form.Item>
+            </Row>
+          </Form>
+          <h3>Result:</h3>
+          {result &&
+            <Descriptions bordered column={2}>
+              <Descriptions.Item label="Data" span={2}>
+                {result.member}
+              </Descriptions.Item>
+              <Descriptions.Item label="Longitude">
+                {result.coordinates.longitude}
+              </Descriptions.Item>
+              <Descriptions.Item label="Latitude">
+                {result.coordinates.latitude}
+              </Descriptions.Item>
+              <Descriptions.Item label="Distance">
+                {result.distance} m
+              </Descriptions.Item>
+            </Descriptions>
+          }
+        </Col>
+      </Row>
     </Row>
   );
 }
