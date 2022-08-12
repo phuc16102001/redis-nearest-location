@@ -1,6 +1,8 @@
 import { Router } from "express";
-import locationController from "../controller/location.controller";
+import locationController from "../controller/location.controller.js";
 
-const router = express.Router();
-router.post('/', locationController.addLocation)
-router.get('/', locationController.queryLocation)
+const locationRouter = Router();
+locationRouter.post('/', locationController.addLocation)
+locationRouter.get('/', locationController.queryLocation)
+
+export default locationRouter;
