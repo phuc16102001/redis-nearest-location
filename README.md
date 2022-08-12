@@ -1,6 +1,6 @@
 # Redis cache - Geospatial query
 
-[![stars](https://custom-icon-badges.herokuapp.com/github/stars/phuc16102001/redis-demo?logo=star)](https://github.com/phuc16102001/redis-demo/stargazers "stars")
+[![stars](https://custom-icon-badges.herokuapp.com/github/stars/phuc16102001/redis-nearest-location?logo=star)](https://github.com/phuc16102001/redis-demo/stargazers "stars")
 
 ## Introduction
 

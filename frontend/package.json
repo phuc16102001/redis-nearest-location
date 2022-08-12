@@ -1,5 +1,5 @@
 {
-  "name": "redis-demo",
+  "name": "redis-nearest-location-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
