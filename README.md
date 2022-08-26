@@ -37,7 +37,7 @@ $ npm start
 For the backend:
 
 ```bash
-$ cd frontend
+$ cd backend
 $ npm i
 $ npm start
 ```
