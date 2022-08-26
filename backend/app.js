@@ -3,6 +3,7 @@ import cors from 'cors'
 import Redis from './utils/redis.js';
 import morganBody from "morgan-body";
 import locationRouter from './routes/location.routes.js';
+import config from './config/config.js';
 
 const redis = Redis.getObject();
 const app = express();
@@ -20,7 +21,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-const port = process.env.PORT || 8080
+const port = config.PORT
 app.listen(port, () => {
   console.log("Listening on", port)
 })
