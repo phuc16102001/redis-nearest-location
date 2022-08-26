@@ -14,37 +14,63 @@ In this demo, the user can insert locations which defined by a coordinate (longi
 
 Because of using `Redis cloud`, you first need to register and create your own database. For the searching purpose, I use the `Redis search` module. At the next stage, create the `.env` file at the `/backend` folder to specify the path which is used to connect to your database:
 
-```
+```bash
 REDIS_URL="redis://<username>:<password>@<public_endpoint>"
 ```
 
 For instance, the connection string can be:
 
-```
+```bash
 REDIS_URL="redis://default:abc123@redis-123.cloud.com:13245"
 ```
 
-### Running application
+Then install NPM packages for each server, and start it up:
 
-Secondly, you must run the backend server before running the frontend server:
-
-```bash
-$ cd backend
-$ npm start
-```
-
-Then you can start the frontend - web application:
+For the frontend:
 
 ```bash
 $ cd frontend
+$ npm i
 $ npm start
+```
+
+For the backend:
+
+```bash
+$ cd frontend
+$ npm i
+$ npm start
+```
+
+### Run with Docker
+
+If you have Docker, you can easliy run the project with installing stuff (e.g. NodeJS, NPM packages). Firstly, place your `REDIS_URL` above to the `docker-compose.yml`:
+
+```yml
+environment:
+  - REDIS_URL=<YOUR_REDIS_URL>
+```
+
+Then run with a single command:
+
+```bash
+$ docker-compose up -d
+```
+
+If you need to see the logs, use the command:
+
+```bash
+$ docker-compose logs -f
 ```
 
 ## Technologies
 
 <div align="center" >
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
   <img src="https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white">
+  <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
+</div>
+<div align="center" >
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
   <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge">
   <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
 </div>

@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    image: phuc16102001/redis-nearest-location-backend:1.0
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_URL=<YOUR_REDIS_URL>
+  frontend:
+    image: phuc16102001/redis-nearest-location-frontend:1.0
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_HOST=localhost
+      - REACT_APP_BACKEND_PORT=8080
+    

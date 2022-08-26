@@ -19,12 +19,16 @@ class Redis {
     }
 
     async initRedis() {
-        this.client = createClient({
-            url: config.REDIS_URL
-        });
-        this.client.on('error', (err) => console.log('Redis Client Error', err));
-        this.client.on('connect', () => console.log('Redis Client Connected'));
-        await this.client.connect();
+        try {
+            this.client = createClient({
+                url: config.REDIS_URL
+            });
+            this.client.on('error', (err) => console.log('Redis Client Error', err));
+            this.client.on('connect', () => console.log('Redis Client Connected'));
+            await this.client.connect();
+        } catch (err) {
+            console.error("Please add the REDIS_URL variable to '.env' file")
+        }
     }
 
     async addLocation(longitude, latitude, member) {
